@@ -6,7 +6,7 @@ import { getFieldModel, getInitalFormValues, createYupSchema } from '../utils/ut
 import useStyles from '../styles';
 // import { string, number, boolean, object } from 'yup';
 import * as yup from 'yup';
-
+import { server } from '../config/index';
 export default function App({ formData }): JSX.Element {
   const classes = useStyles();
   const { data, title: formId } = formData;
@@ -91,7 +91,7 @@ export default function App({ formData }): JSX.Element {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:3000/api/form');
+  const res = await fetch(`${server}/api/form`);
   const formData = await res.json();
   return {
     props: {
