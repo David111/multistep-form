@@ -15,6 +15,21 @@ export default function handler(req, res) {
             label: 'Full Name',
             type: 'text',
             _uid: 'eb169f76-4cd9-4513-b673-87c5c7d27e02',
+            validationType: 'string',
+            validations: [
+              {
+                type: 'required',
+                params: ['this field is required'],
+              },
+              {
+                type: 'min',
+                params: [5, 'name cannot be less than 5 characters'],
+              },
+              {
+                type: 'max',
+                params: [10, 'name cannot be more than 10 characters'],
+              },
+            ],
           },
           {
             component: 'input',
@@ -27,6 +42,13 @@ export default function handler(req, res) {
             label: 'Phone number',
             type: 'text',
             _uid: 'f61233e8-565e-43d0-9c14-7d7f220c6020',
+            validationType: 'number',
+            validations: [
+              {
+                type: 'required',
+                params: ['phone number is required'],
+              },
+            ],
           },
         ],
       },
@@ -81,26 +103,33 @@ export default function handler(req, res) {
           {
             component: 'checkbox',
             label: 'Do you provide group medical insurance?',
-            type: 'checkbox',
-            _uid: 'bd90f44a-d479-49ae-ad66-c2c475dca66b',
+            type: 'boolean',
+            _uid: 'bd90f44a-d479-49ae-ad66-c2c475dca67b',
           },
           {
             component: 'checkbox',
             label: 'Do you offer a retirement or persion plan?',
-            type: 'checkbox',
+            type: 'boolean',
             _uid: 'bd90f44a-d479-49ae-ad66-c2c475dca64b',
           },
           {
             component: 'checkbox',
             label: 'Do you give a paid vacation?',
-            type: 'checkbox',
+            type: 'boolean',
             _uid: 'bd90f44a-d479-49ae-ad66-c2c475dca65b',
           },
           {
-            component: 'text',
+            component: 'input',
             label: 'Please provide details about the paid vacations',
             type: 'text',
             _uid: 'bd90f44a-d479-49ae-ad66-c2c475daa63b',
+            validationType: 'string',
+            validations: [
+              {
+                type: 'required',
+                params: ['this field is required'],
+              },
+            ],
             conditional: {
               value: true,
               field: 'bd90f44a-d479-49ae-ad66-c2c475dca65b_bd90f44a-d479-49ae-ad66-c2c475daa63b',
@@ -118,6 +147,7 @@ export default function handler(req, res) {
             label: 'Radio Buttons',
             type: 'radio',
             _uid: 'bd90f44a-d479-49ae-ad66-c2c475dca66b',
+            defaultValue: 'newfront',
             options: [
               {
                 component: 'option',

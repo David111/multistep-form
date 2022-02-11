@@ -12,4 +12,7 @@ export default makeStyles((theme) => ({
     margin: theme.spacing(1),
     position: 'relative',
   },
+  radioLabel: {
+    display: 'none',
+  },
 }));
