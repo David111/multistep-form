@@ -19,14 +19,6 @@ export const data = {
               type: 'required',
               params: ['this field is required'],
             },
-            {
-              type: 'min',
-              params: [5, 'name cannot be less than 5 characters'],
-            },
-            {
-              type: 'max',
-              params: [10, 'name cannot be more than 10 characters'],
-            },
           ],
         },
         {
@@ -60,12 +52,26 @@ export const data = {
           label: 'Company name',
           type: 'text',
           _uid: 'eb169f76-4cd9-4513-b673-87c5c7d27e03',
+          validationType: 'string',
+          validations: [
+            {
+              type: 'required',
+              params: ['this field is required'],
+            },
+          ],
         },
         {
           component: 'input',
           label: 'What is your Federal Employer Identification Number?(FEIN)',
           type: 'text',
           _uid: '7f885969-f8ba-40b9-bf5d-0d57bc9c6a8e',
+          validationType: 'string',
+          validations: [
+            {
+              type: 'required',
+              params: ['this field is required'],
+            },
+          ],
         },
         {
           component: 'input',
