@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { Button, Typography } from '@material-ui/core';
+import React, { useState, useMemo } from 'react';
+import { Button } from '@material-ui/core';
 import { Formik, Form } from 'formik';
 import CustomForm from '../components/CustomForm';
 import { getFieldModel, getInitalFormValues, createYupSchema } from '../utils/utils';
 import useStyles from '../styles';
 // import { string, number, boolean, object } from 'yup';
 import * as yup from 'yup';
-import { server } from '../config/index';
+import { data as formData } from '../data';
 export default function App({ formData }): JSX.Element {
   const classes = useStyles();
   const { data, title: formId } = formData;
@@ -90,9 +90,7 @@ export default function App({ formData }): JSX.Element {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(`${server}/api/form`);
-  const formData = await res.json();
+export function getStaticProps() {
   return {
     props: {
       formData,

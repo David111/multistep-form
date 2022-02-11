@@ -1,7 +1,7 @@
-export default function handler(req, res) {
+import { NextApiResponse } from 'next';
+export default function handler(res: NextApiResponse) {
   res.status(200).json({
     title: 'work compensation',
-
     data: [
       {
         pageId: 1,
